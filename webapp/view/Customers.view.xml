@@ -1,0 +1,17 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.project1.controller.Customers" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="Customers">
+					<content>
+					    <List noDataText="Drop list items here" id="list0" items="{/Travel}">
+					        <items>
+					            <StandardListItem type="Navigation" title="{CustomerName}" description="{CustomerID}" id="item0"/>
+					        </items>
+					    </List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

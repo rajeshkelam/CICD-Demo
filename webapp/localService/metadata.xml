@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zapi_bsrap_travel_1234" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="I_DraftAdministrativeDataType" sap:label="Draft Administration Data" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Draft (Technical ID)"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Draft Entity ID"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription" sap:label="Draft Created By"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription" sap:label="Draft Last Changed By"/>
+                <Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Draft Access Type"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft In Process Since"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription" sap:label="Draft In Process By"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Is Kept By User"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Locked Since"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Created By Me"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Last Changed By Me"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft In Process By Me"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Created By (Description)"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Last Changed By (Description)"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft In Process By (Description)"/>
+            </EntityType>
+            <EntityType Name="TravelType" sap:label="Travel Projection  View" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="TravelUUID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="TravelUUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="TravelID" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="Travel ID" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AgencyID" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Agency ID"/>
+                <Property Name="CustomerID" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:text="CustomerName" sap:label="Customer ID"/>
+                <Property Name="CustomerName" Type="Edm.String" MaxLength="40" sap:label="Last Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BeginDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Starting Date"/>
+                <Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="End Date"/>
+                <Property Name="BookingFee" Type="Edm.Decimal" Precision="17" Scale="3" sap:unit="CurrencyCode" sap:label="Booking Fee"/>
+                <Property Name="TotalPrice" Type="Edm.Decimal" Precision="17" Scale="3" sap:unit="CurrencyCode" sap:label="Total Price" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:label="Currency Code" sap:semantics="currency-code"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="1024" sap:label="Description"/>
+                <Property Name="TravelStatus" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Overall Status" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:creatable="false" sap:updatable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Relationship="cds_zapi_bsrap_travel_1234.assoc_542EFF1ED16C8825A40EFF6B3D547689" FromRole="FromRole_assoc_542EFF1ED16C8825A40EFF6B3D547689" ToRole="ToRole_assoc_542EFF1ED16C8825A40EFF6B3D547689"/>
+                <NavigationProperty Name="SiblingEntity" Relationship="cds_zapi_bsrap_travel_1234.assoc_C749AF2C3E7AD2E8B736740CB1A53479" FromRole="FromRole_assoc_C749AF2C3E7AD2E8B736740CB1A53479" ToRole="ToRole_assoc_C749AF2C3E7AD2E8B736740CB1A53479"/>
+            </EntityType>
+            <ComplexType Name="DummyFunctionImportResult">
+                <Property Name="IsInvalid" Type="Edm.Boolean" sap:label="TRUE"/>
+            </ComplexType>
+            <Association Name="assoc_C749AF2C3E7AD2E8B736740CB1A53479" sap:content-version="1">
+                <End Type="cds_zapi_bsrap_travel_1234.TravelType" Multiplicity="1" Role="FromRole_assoc_C749AF2C3E7AD2E8B736740CB1A53479"/>
+                <End Type="cds_zapi_bsrap_travel_1234.TravelType" Multiplicity="0..1" Role="ToRole_assoc_C749AF2C3E7AD2E8B736740CB1A53479"/>
+            </Association>
+            <Association Name="assoc_542EFF1ED16C8825A40EFF6B3D547689" sap:content-version="1">
+                <End Type="cds_zapi_bsrap_travel_1234.TravelType" Multiplicity="1" Role="FromRole_assoc_542EFF1ED16C8825A40EFF6B3D547689"/>
+                <End Type="cds_zapi_bsrap_travel_1234.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_542EFF1ED16C8825A40EFF6B3D547689"/>
+            </Association>
+            <EntityContainer Name="cds_zapi_bsrap_travel_1234_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="cds_zapi_bsrap_travel_1234.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Travel" EntityType="cds_zapi_bsrap_travel_1234.TravelType" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_C749AF2C3E7AD2E8B736740CB1A53479" Association="cds_zapi_bsrap_travel_1234.assoc_C749AF2C3E7AD2E8B736740CB1A53479" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Travel" Role="FromRole_assoc_C749AF2C3E7AD2E8B736740CB1A53479"/>
+                    <End EntitySet="Travel" Role="ToRole_assoc_C749AF2C3E7AD2E8B736740CB1A53479"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_542EFF1ED16C8825A40EFF6B3D547689" Association="cds_zapi_bsrap_travel_1234.assoc_542EFF1ED16C8825A40EFF6B3D547689" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="Travel" Role="FromRole_assoc_542EFF1ED16C8825A40EFF6B3D547689"/>
+                    <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_542EFF1ED16C8825A40EFF6B3D547689"/>
+                </AssociationSet>
+                <FunctionImport Name="acceptTravel" ReturnType="cds_zapi_bsrap_travel_1234.TravelType" EntitySet="Travel" m:HttpMethod="POST" sap:action-for="cds_zapi_bsrap_travel_1234.TravelType">
+                    <Parameter Name="TravelUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="TravelActivate" ReturnType="cds_zapi_bsrap_travel_1234.TravelType" EntitySet="Travel" m:HttpMethod="POST" sap:action-for="cds_zapi_bsrap_travel_1234.TravelType">
+                    <Parameter Name="TravelUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="TravelDiscard" ReturnType="cds_zapi_bsrap_travel_1234.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zapi_bsrap_travel_1234.TravelType">
+                    <Parameter Name="TravelUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="TravelEdit" ReturnType="cds_zapi_bsrap_travel_1234.TravelType" EntitySet="Travel" m:HttpMethod="POST" sap:action-for="cds_zapi_bsrap_travel_1234.TravelType">
+                    <Parameter Name="TravelUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                </FunctionImport>
+                <FunctionImport Name="TravelPrepare" ReturnType="cds_zapi_bsrap_travel_1234.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zapi_bsrap_travel_1234.TravelType">
+                    <Parameter Name="TravelUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+                <FunctionImport Name="rejectTravel" ReturnType="cds_zapi_bsrap_travel_1234.TravelType" EntitySet="Travel" m:HttpMethod="POST" sap:action-for="cds_zapi_bsrap_travel_1234.TravelType">
+                    <Parameter Name="TravelUUID" Type="Edm.Guid" Mode="In"/>
+                    <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities/Travel" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="ActivationAction" String="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities/TravelActivate"/>
+                        <PropertyValue Property="DiscardAction" String="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities/TravelDiscard"/>
+                        <PropertyValue Property="EditAction" String="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities/TravelEdit"/>
+                        <PropertyValue Property="PreparationAction" String="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities/TravelPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zapi_bsrap_travel_1234.TravelType/AgencyID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zapi_bsrap_travel_1234.TravelType/CustomerID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="cds_zapi_bsrap_travel_1234.cds_zapi_bsrap_travel_1234_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZAPI_BSRAP_TRAVEL_1234/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://313e68ec-01a2-471d-b104-39156ed95037.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZAPI_BSRAP_TRAVEL_1234/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
